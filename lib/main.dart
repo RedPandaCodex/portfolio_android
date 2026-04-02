@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false, // Remove a faixa de "Debug"
       title: 'Meu Portfólio',
-      
+
       // Configuração de Tema
       theme: ThemeData(
         useMaterial3: true,
@@ -22,11 +22,11 @@ class MyApp extends StatelessWidget {
           brightness: Brightness.light,
         ),
         // Define a fonte padrão para o projeto todo
-        fontFamily: 'sans-serif', 
+        fontFamily: 'sans-serif',
       ),
-      
+
       // A tela inicial do seu app
-      home: HomeView(), 
+      home: HomeView(),
     );
   }
 }
