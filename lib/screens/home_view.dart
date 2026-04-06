@@ -6,7 +6,7 @@ import '../components/social_button.dart';
 
 class HomeView extends StatelessWidget {
   HomeView({super.key});
-  
+
   final List<Project> myProjects = [
     Project(
       title: "App Game baseado em Kingdom Hearts",
@@ -22,15 +22,10 @@ class HomeView extends StatelessWidget {
     ),
     Project(
       title: "Smart City",
-      description: "Projeto de monitoramento de cidade inteligente usando react",
+      description:
+          "Projeto de monitoramento de cidade inteligente usando react",
       imageUrl: "assets/smartcity.jpeg",
       link: "https://github.com/RedPandaCodex/SmartCity_Retrowave",
-    ),
-    Project(
-      title: "Portfólio Pessoal",
-      description: "Este site que você está vendo agora :D",
-      imageUrl: "assets/portfolio.jpg",
-      link: "https://github.com/RedPandaCodex/portfolio_android",
     ),
   ];
 
@@ -40,9 +35,8 @@ class HomeView extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const HeroSection(), // Passo 3
-            
-            // Seção de Projetos com fundo levemente cinza para destacar
+            const HeroSection(), 
+            // Seção de Projetos com fundo para destacar
             Container(
               width: double.infinity,
               color: Colors.grey[50],
@@ -50,15 +44,15 @@ class HomeView extends StatelessWidget {
               child: Center(
                 child: ConstrainedBox(
                   constraints: const BoxConstraints(maxWidth: 1200),
-                  child: ProjectsGrid(projects: myProjects), 
+                  child: ProjectsGrid(projects: myProjects),
                 ),
               ),
             ),
-            
-            const SocialButtons(), // Passo 5
+
+            const SocialButtons(), 
           ],
         ),
       ),
     );
   }
-} 
+}

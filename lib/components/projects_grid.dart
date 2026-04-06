@@ -15,7 +15,7 @@ class ProjectsGrid extends StatelessWidget {
     return Column(
       children: [
         const Text(
-          "Projetos",
+          "Projetos Recentes",
           style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
         ),
         const SizedBox(height: 40),
