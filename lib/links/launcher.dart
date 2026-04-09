@@ -2,7 +2,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/material.dart';
 
 class LauncherUtils {
-  // Tornamos a função estática para usá-la sem precisar instanciar a classe
+  // Função estática para usá-la sem precisar instanciar a classe
   static Future<void> openLink(String urlString) async {
     final Uri url = Uri.parse(urlString);
     

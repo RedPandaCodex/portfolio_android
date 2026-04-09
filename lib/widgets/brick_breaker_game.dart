@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 
-// Modelo para o Tijolo - Evita erros de tipagem no Web
+// Modelo para o Tijolo
 class Brick {
   double x;
   double y;
@@ -85,18 +85,18 @@ class _BrickBreakerGameState extends State<BrickBreakerGame> {
       ballX += ballXStep;
       ballY += ballYStep;
 
-      // Colisão Paredes
+      // Colisão das Paredes
       if (ballX >= 1.0 || ballX <= -1.0) ballXStep *= -1;
       if (ballY <= -1.0) ballYStep *= -1;
 
-      // Colisão Raquete
+      // Colisão do retângulo
       if (ballY >= 0.9 &&
           ballX >= paddleX - (paddleWidth / 2) &&
           ballX <= paddleX + (paddleWidth / 2)) {
         ballYStep *= -1;
       }
 
-      // Colisão Tijolos
+      // Colisão dos Tijolos
       for (var brick in bricks) {
         if (brick.isVisible) {
           if (ballY <= brick.y + 0.05 &&
@@ -129,11 +129,11 @@ class _BrickBreakerGameState extends State<BrickBreakerGame> {
 
   @override
   Widget build(BuildContext context) {
-    // Pegamos a largura para os tijolos serem proporcionais
+    // A largura para os tijolos para ser proporcionais
     final gameWidth = MediaQuery.of(context).size.width;
 
     return Column(
-      mainAxisSize: MainAxisSize.min, // Importante para não expandir infinito
+      mainAxisSize: MainAxisSize.min, // Para não expandir infinito
       children: [
         Text(
           "PONTOS: $score",
@@ -145,7 +145,7 @@ class _BrickBreakerGameState extends State<BrickBreakerGame> {
         ),
         const SizedBox(height: 10),
 
-        // CONTAINER COM ALTURA FIXA - Isso resolve o erro de RenderFlex
+        // Conteiner do Jogo
         Container(
           height: 400,
           width: double.infinity,
